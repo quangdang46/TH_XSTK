@@ -5,6 +5,3 @@ for i in range(len(U3)):
   U3[i]=list(itertools.chain(*U3[i]))
 print(U3)
 print(U3.__len__())
-
-
-
