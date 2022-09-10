@@ -7,15 +7,14 @@ U3_M=list(itertools.permutations(list_M))
 U3_P=list(itertools.permutations(list_P))
 U3_C=list(itertools.permutations(list_C))
 U3_L=list(itertools.permutations(list_L))
-U3_MPC=list(itertools.product(U3_M, U3_P, U3_C, U3_L))
-print(U3_M)
 
+def cross_join(A,B,C,D):
+  return {(a,b,c,d) for a in A for b in B for c in C for d in D }
 
+U3=list(cross_join(U3_M,U3_P,U3_C,U3_L))
 
-
-
-# for i in range(len(U3)):
-#   U3[i]=list(U3[i])
-#   U3[i]=list(itertools.chain(*U3[i]))
-# print(U3)
+for i in range(len(U3)):
+  U3[i]=list(U3[i])
+  U3[i]=list(itertools.chain(*U3[i]))
+print(U3)
 
