@@ -23,8 +23,8 @@ A1 = set(filter(lambda x: x.count('K') in {1, 2},list(map(lambda x: ''.join(x), 
 
 # d
 A2 = set(filter(lambda x: x.count('K')>=1,list(map(lambda x: ''.join(x), list(permutations(Cards, 3))))))
-print(P(A1, B))
-print(P(A2, B))
+print(round(P(A1, B),4))
+print(round(P(A2, B),4))
 
 
 
