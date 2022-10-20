@@ -9,13 +9,14 @@ Suits = {'♡', '♢', '♣', '♠'}
 # '♣', '♠': black
 
 # a
-Cards =set(map(lambda x:str(x[0])+x[1], product(Ranks, Suits)))
-# print(Cards)
+Cards =sorted(set(map(lambda x:str(x[0])+x[1], product(Ranks, Suits))))
+print(Cards)
+
 
 # b
 
 B = list(permutations(Cards, 3))
-# print(B)
+print(B)
 
 # c
 A1 = set(filter(lambda x: x.count('K') in {1, 2},list(map(lambda x: ''.join(x), list(permutations(Cards, 3))))))

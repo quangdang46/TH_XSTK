@@ -56,7 +56,7 @@ Suits = {'♡', '♢', '♣', '♠'}
 # '♣', '♠': black
 
 # a
-Cards =set(map(lambda x:str(x[0])+x[1], product(Ranks, Suits)))
+Cards =sorted(set(map(lambda x:str(x[0])+x[1], product(Ranks, Suits))))
 # print(Cards)
 
 # b
