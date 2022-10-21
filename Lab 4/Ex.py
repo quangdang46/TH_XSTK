@@ -1,4 +1,5 @@
 from random import *
+import math
 
 x=[randint(1,6) for i in range(8000)]
 X=set(x)
@@ -26,7 +27,6 @@ for x in X:
 print(VarX)
 
 # Độ lệch chuẩn
-import math
 SD=math.sqrt(VarX)
 print(SD)
 # Điểm tiêu chuẩn
