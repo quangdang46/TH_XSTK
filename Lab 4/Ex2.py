@@ -11,7 +11,7 @@ def count(arr,check=1):
 def init(times):
   return [count([flip(),flip()]) for i in range(times)]
 
-x = init(3)
+x = init(10000)
 print(x)
 
 # b
