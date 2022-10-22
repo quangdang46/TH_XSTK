@@ -23,8 +23,7 @@ def plot_pmf_bernoulli(p):
 
 # Phân phối nhị thức
 def pmf_binom(k,n,p):
-  return factorial(n)/(factorial(k)*factorial(n-k))*pmf_bernoulli(p,k)
-
+  return factorial(n)/(factorial(k)*factorial(n-k))*p**k*(1-p)**(n-k)
 def plot_pmf_binom(n,p):
   K=list(range(n+1))
   P_binom=[pmf_binom(k,n,p) for k in K]
