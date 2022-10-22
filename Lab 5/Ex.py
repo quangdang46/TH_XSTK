@@ -11,7 +11,6 @@ def pmf_bernoulli(p,x):
 def plot_pmf_bernoulli(p):
   X=[0,1]
   P_bernoulli=[pmf_bernoulli(p,x) for x in X]
-  print(P_bernoulli)
   plt.plot(X,P_bernoulli,'o')
 
   plt.title('PMF of Bernoulli(p=%.2f)'%(p))
@@ -40,4 +39,21 @@ def plot_pmf_binom(n,p):
 
 # plot_pmf_binom(15,0.5)
 
+# phân phối Poisson
 
+
+def pmf_poisson(k,lam):
+  return lam**k*exp(-lam)/factorial(k)
+
+def plot_pmf_poisson(n,lam):
+  K=list(range(n+1))
+  P_poisson=[pmf_poisson(k,lam) for k in K]
+  plt.plot(K,P_poisson,'-o')
+  axes=plt.gca()
+
+  plt.title('PMF of Poisson(%i)'%(lam))
+  plt.xlabel('Number k of Events')
+  plt.ylabel('Probability of Number of Events')
+  plt.show()
+
+plot_pmf_poisson(25,5)
