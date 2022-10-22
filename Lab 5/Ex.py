@@ -36,7 +36,6 @@ def plot_pmf_binom(n,p):
   plt.xlabel('Number k of success')
   plt.ylabel('Probability of k success')
   plt.show()
-
 # plot_pmf_binom(15,0.5)
 
 # phân phối Poisson
@@ -56,4 +55,23 @@ def plot_pmf_poisson(n,lam):
   plt.ylabel('Probability of Number of Events')
   plt.show()
 
-plot_pmf_poisson(25,5)
+# plot_pmf_poisson(25,5)
+
+# Phân bố hình học
+
+def pmf_ge(p,x):
+  return p*(1-p)**(x-1)
+
+def plot_pmf_geo(p,n):
+  X=list(range(1,n+1))
+  P_geo=[pmf_ge(p,x) for x in X]
+  plt.plot(X,P_geo,'-o')
+  axes=plt.gca()
+  axes.set_xlim([1,n])
+  axes.set_ylim([0,1.1*max(P_geo)])
+  plt.title('PMF of Geometric(%.2f)'%(p))
+  plt.xlabel('n')
+  plt.ylabel('Probability')
+  plt.show()
+
+plot_pmf_geo(0.3,10)
