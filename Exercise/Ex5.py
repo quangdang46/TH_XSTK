@@ -5,17 +5,45 @@ Suits = {'♡', '♢', '♣', '♠'}
 Cards = list(product(Ranks , Suits))
 
 
-# def getSuits(arr):
-#   return [x[1] for x in arr]
-# def getRanks(arr):
-#   return [x[0] for x in arr]
+#Practical probability
+dict_values = {1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 'J':11, 'Q':12, 'K':13}
+def get_value(card):
+  return dict_values[card[0]]
 
-# def experiment_a(n):
-#   count=0
-#   for _ in range(n):
-#     listRandom=getRanks(choices(Cards,k=5))
-#     if len(set(listRandom))==5 and max(listRandom)-min(listRandom)==4:
-#       count+=1
-#   return count/n
+def isStraight(cards):
+  cards = sorted(list(map(get_value, cards)))
+  for i in range(len(cards)-1):
+    if cards[i+1] - cards[i] != 1:
+      return False
+  return True
+  
+def getCards():
+  return choices(Cards, k=5)
 
-# print(experiment_a(1000000))
+def getProbability(n):
+  count = 0
+  for i in range(n):
+    if isStraight(getCards()):
+      count += 1
+  return count / n
+
+print(getProbability(1000))
+
+#  Theorical probability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
