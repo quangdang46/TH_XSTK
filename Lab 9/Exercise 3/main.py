@@ -23,7 +23,7 @@ frequencies = np.array(frequencies)
 words = np.array(words)
 
 
-fig = plt.figure(figsize=(10, 10))
+fig = plt.figure(figsize=(7, 7))
 plt.bar(words, frequencies)
 plt.title('Frequency of the 30 most common words')
 plt.xlabel('Words')
