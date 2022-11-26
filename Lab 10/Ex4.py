@@ -1,8 +1,3 @@
-'''
-4. Find the frequency of each word in a given text (at least 300 words), and draw a 
-histogram of the frequency of word with parameter bin = 30.
-'''
-
 import matplotlib.pyplot as plt
 import numpy as np
 
